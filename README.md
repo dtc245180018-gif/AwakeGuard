@@ -264,7 +264,21 @@ Nếu cần hỗ trợ, hãy cung cấp **thông báo lỗi đầy đủ dạng 
 
 Bộ kiểm thử hiện có **20 bài**, bao gồm các tình huống từng gây báo nhầm: mắt vẫn mở khi cúi vừa, đầu hạ do đổi tư thế, cảnh báo khi gục sâu, chế độ ưu tiên mắt và hiển thị tiếng Việt có dấu. **Unit test thành công không thay thế được kiểm thử thực tế với nhiều người và điều kiện ánh sáng khác nhau.**
 
-## 9. Nguồn tham khảo và trách nhiệm sử dụng
+## 9. Đưa dự án lên GitHub từ bản tải về (dành cho chủ kho)
+
+Nếu nhận được **gói dự án kèm thư mục `.git`**, sau khi giải nén hãy mở PowerShell tại thư mục chứa `README.md`, rồi chạy:
+
+```powershell
+git remote -v
+git status
+git push -u origin main
+```
+
+`origin` đã được cấu hình trỏ tới `https://github.com/dtc245180018-gif/AwakeGuard.git`. Bạn cần đăng nhập GitHub bằng tài khoản **có quyền ghi** lên kho. Git for Windows thường sử dụng cửa sổ đăng nhập của **Git Credential Manager**; nếu được yêu cầu mật khẩu qua HTTPS, dùng cơ chế token/xác thực hợp lệ theo hướng dẫn của GitHub, không chia sẻ token công khai.
+
+Nếu bạn tải mã nguồn dưới dạng ZIP từ **Code → Download ZIP** của GitHub thì **không có `.git`**, nên cần `git init`, tạo commit và thêm remote trước khi push. Trong trường hợp repo trên GitHub đã có commit khác, hãy đồng bộ và giải quyết xung đột bình thường; **không dùng `git push --force`** để tránh ghi đè dữ liệu.
+
+## 10. Nguồn tham khảo và trách nhiệm sử dụng
 
 - [MRL Eye Dataset (gốc)](https://mrl.cs.vsb.cz/eyedataset.html), tham khảo phương pháp thu và nhãn dữ liệu. **Ảnh gốc không được đưa vào kho GitHub**; trang nguồn chưa nêu rõ giấy phép thương mại, nên cần xin phép nếu sử dụng ngoài phạm vi học tập/nghiên cứu.
 - [MediaPipe Face Landmarker (Google)](https://developers.google.com/edge/mediapipe/solutions/vision/face_landmarker/python): nhận diện điểm khuôn mặt và `facial_transformation_matrixes` để ước lượng tư thế đầu. Mô hình `.task` tải từ [địa chỉ của Google](https://storage.googleapis.com/mediapipe-models/face_landmarker/face_landmarker/float16/1/face_landmarker.task).
