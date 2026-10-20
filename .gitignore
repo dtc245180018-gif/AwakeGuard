@@ -1,0 +1,31 @@
+# Python virtual environments and generated files
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Local/private camera captures and downloaded MRL archives
+data/
+*.zip
+*.zip.partial
+
+# Videos, captures and screenshots generated during tests
+*.mp4
+*.avi
+*.mov
+*.webm
+*.log
+
+# Local configuration and IDE files
+.env
+.env.*
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+
+# The two pre-trained models and evaluation.json in models/ ARE distributed
+# intentionally. Do not add blanket exclusions for *.joblib or *.task.
